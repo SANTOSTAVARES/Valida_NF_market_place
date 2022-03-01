@@ -1,12 +1,17 @@
-import untangle
-import xmltodict
-'''
-referências
-    Como interpretar aquivo xml
-        https://python-guide-pt-br.readthedocs.io/pt_BR/latest/scenarios/xml.html
-'''
+from xml.dom import minidom
+import xml.etree.ElementTree as ET
 
-#O objetivo do programa é validar se as notas fiscais das vendas realizadas num market place que não são feitas pelo proprietário do site (e sim por um terceiro), estão tendo notas fiscais emitidas com seus componentes corretos , por exemplo, descrição do produto, quantidade de itens, preço e emissor da nota e etc.
+class NFe_parceiro:
 
-if __name__ == "__main__":
-    main()
+    def __init__(self, nome_arquivo) -> None:
+        self.nome_arquivo = nome_arquivo
+    
+    arquivo = open(f'{self.nome_arquivo}')
+    conteudo_NF = minidom.parse(arquivo)
+
+    def cnpj(self):
+        return conteudo_NF.getElementsByTagName('CNPJ')
+
+nerd = NFe_parceiro('nota_nerdstore.xml')
+
+nerd.cnpj()

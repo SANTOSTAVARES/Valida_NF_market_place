@@ -1,15 +1,18 @@
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 
-class NFe_parceiro:
+class third_party_invoice:
 
-    def __init__(self, nome_arquivo) -> None:
-        self.nome_arquivo = nome_arquivo
-    
-    arquivo = open(f'{self.nome_arquivo}')
-    conteudo_NF = minidom.parse(arquivo)
+    def __init__(self, file_name) -> None:
+        self.file_name = file_name
+        invoice_file = open(self.file_name)
+        global invoice_content
+        invoice_content = minidom.parse(invoice_file)
+        
+    def invoice_number(self):
+        xml_tag = 'nNF'
+        invoice_tag = invoice_content.getElementsByTagName(f'{xml_tag}')
+        return invoice_tag[0].firstChild.data
 
-    def cnpj(self):
-        return conteudo_NF.getElementsByTagName('CNPJ')
-
-nerd = NFe_parceiro('nota_nerdstore.xml')
+nerd = third_party_invoice('nota_nerdstore.xml')
+print(nerd.invoice_number())

@@ -20,8 +20,6 @@ class third_party_invoice:
         xml_tag = 'cnpj'
         invoice_tag = invoice_content.getElementsByTagName(f'{xml_tag}')
         return invoice_tag[0].firstChild.data
-#Testeeeeeeeeeeeeee
-#Testeeeeeeee
-#afasgasagga
+
 nerd = third_party_invoice('nota_nerdstore.xml')
 print(nerd.invoice_number())

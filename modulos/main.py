@@ -1,5 +1,6 @@
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
+from data import not_checked_invoices
 
 class third_party_invoice:
 
@@ -39,8 +40,14 @@ class third_party_invoice:
             counter += 1
 
         return products_list
- 
-nerd = third_party_invoice('DFE35191142274696002561550010040410901297528776.xml')
-print(nerd.invoice_number())
-print(nerd.cnpj())
-print(nerd.products())
+
+
+#print(nerd.invoice_number())
+#print(nerd.cnpj())
+#print(nerd.products())
+
+counter = 0
+first_in_line = not_checked_invoices()[counter][0]
+print(first_in_line)
+analyze_invoice = third_party_invoice(f'{first_in_line}.xml')
+print(analyze_invoice.products())

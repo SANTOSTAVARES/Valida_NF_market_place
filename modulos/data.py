@@ -53,10 +53,3 @@ def not_checked_invoices():
                 iterable_result = [query_result[1], query_result[2]]
                 to_be_checked.append(iterable_result)
     return to_be_checked
-
-
-#invoice_check()
-#insert_examples()
-#all_invoices()
-#not_checked_invoices()
-#print(to_be_checked)

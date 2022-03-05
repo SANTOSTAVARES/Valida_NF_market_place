@@ -2,7 +2,7 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from data import not_checked_invoices
 import time
-
+#Aulas com Dirceu
 class third_party_invoice:
 
     def __init__(self, file_name) -> None:

@@ -9,4 +9,4 @@ This project has two folders:
   modulos -> There are modules to run the application.
 
 How to run this application:
-Basically you've to use the 'search_invoice()' function to analyze if there is any invoice in line to be analyzed.  It will search for the xml file name that it is in line to be checked on invoice_check.db to compare to its invoice. When there is recorded data that the checking column is filled as 'newbie', the search_invoice function has to work. It will get the invoice_id and search a xml file that has the same name. In the end, the application will show on terminal if the invoice is correct or not.
+Basically you've to use the 'search_invoice()' function to analyze if there is any invoice in line to be analyzed.  It will search for the xml file name that it is in line to be checked on invoice_check.db to compare to its invoice. When there is recorded data that the checking column is filled as 'newbie', the search_invoice function has to work. It will get the invoice_id and search a xml file that has the same name. In the end, the application will show on terminal if the invoice is regular or not.
